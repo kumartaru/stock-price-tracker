@@ -8,13 +8,13 @@
     "seed": "node seed.js",
     "start": "npm-run-all -s seed start-app"
   },
-  
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "mongoose": "^8.0.0"
+    "mongoose": "^8.0.0",
+    "npm-run-all": "^4.1.5"
   }
 }
