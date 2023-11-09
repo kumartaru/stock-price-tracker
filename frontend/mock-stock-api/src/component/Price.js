@@ -6,7 +6,7 @@ const Price = ({ selectedStock }) => {
 
   const fetchStockPrice = () => {
     axios
-      .get(`http://localhost:8080/api/getRandomStockPrice?symbol=${selectedStock}`)
+      .get(`https://stock-price-tracker-git-main-taruns-projects-bfc30eba.vercel.app/api/getRandomStockPrice?symbol=${selectedStock}`)
       .then((response) => {
         setPrice(response.data.price);
       })
