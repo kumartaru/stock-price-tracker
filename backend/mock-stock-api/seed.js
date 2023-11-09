@@ -2,9 +2,10 @@
 
 const mongoose = require('mongoose');
 const Stock = require('./models/stock'); // Import the Stock model
-
+require('dotenv').config();
+const dbUrl=process.env.DB_URL || 'mongodb://localhost:27017/stocktracker'
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/stocktracker');
+mongoose.connect(dbUrl);
 
 
 // Create a default stock entry
@@ -18,7 +19,7 @@ const predefinedStocks = [
 
 // Save the default stock entry to the database
 Stock.insertMany(predefinedStocks)
-  .then((stocks) => {
+.then((stocks) => {
     console.log('Default stock entries have been created and saved:', stocks);
     mongoose.connection.close();
   })
